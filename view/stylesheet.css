@@ -1,0 +1,187 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06 Aug 2018, 10:00:18 AM
+    Author     : hp-pc
+*/
+.detail{
+    -fx-background-color: white;
+}
+.check-box .box{
+    -fx-background-color: white;
+    -fx-border-color: #444444;
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+}
+.time-display{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.volum-item{
+    -fx-background-color: rgba(0,0,0,0.8);
+    -fx-text-fill: white;
+}
+#vol .track{
+    -fx-background-color: white;
+}
+.notification{
+    -fx-border-radius: 50em;
+    -fx-background-radius: 50em;
+    -fx-background-color: white;
+    -fx-font-weight:bold;
+}
+
+.progress-bar > .bar{
+    -fx-background-insets: 0;
+    -fx-padding: 0.20em;
+    -fx-background-color:#49915e;
+}
+#progressNobe .track{
+    -fx-background-color:transparent;
+}
+
+.slider .thumb{
+    -fx-background-color: #49915e;
+}
+.list-cell{
+    -fx-cell-size: 50;
+    -fx-padding:0 0 0 40;
+    -fx-background-size: 30;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+    -fx-background-image:url(open.png);
+}
+.list-cell:hover{
+    -fx-text-fill: #49915e;
+    -fx-cursor: hand;
+}
+.list-cell:selected{
+    -fx-background-color: #49915e;
+    -fx-text-fill: white;
+}
+.scroll-bar:vertical,.scroll-bar:horizontal{
+   -fx-background-color: transparent;
+   -fx-border-color: transparent;
+}
+.scroll-bar:vertical .thumb,.scroll-bar:horizontal .thumb{
+    -fx-background-color: #49915e;
+}
+.plain{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+.toolBar{
+    -fx-background-color: #191919;
+}
+.search{
+    -fx-text-fill: #49915e;
+    -fx-font-weight:bold;
+}
+.searchBox{
+    -fx-background-color: #e2e2e2;
+    -fx-border-width: 0;
+    -fx-border-radius: 22;
+    -fx-background-radius: 20;
+    
+}
+.slideButtonBar{
+    -fx-background-color: #49915e;
+}
+.slideButton{
+    -fx-background-color: transparent;
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(one-pass-box,rgba(0,0,0,0.2),3,3,0,0);
+}
+.controlButton{
+    -fx-background-color:transparent;
+    -fx-text-fill: #444444;
+    -fx-effect: dropshadow(one-pass-box,rgba(0,0,0,0.2),3,3,0,0);
+}
+.controlButton:hover,.controlButton:focus,.controlButton:focused{
+    -fx-border-color:#49915e;
+    -fx-text-fill:white;
+}
+
+.slideButton:hover,.slideButton:focus{
+    -fx-cursor: hand;
+    -fx-background-color: #357447;
+}
+.slideButton:focused{
+    -fx-background-color: #357447;
+}
+.utility{
+    -fx-background-color: #ffffff;
+}
+.player{
+    
+}
+.playerButton{
+    -fx-text-fill: #49915e;
+    -fx-background-color:transparent;
+    -fx-font-size:14pt;
+    -fx-background-size: 40;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+playerButton:hover{
+   -fx-cursor: hand;
+}
+.listButton{
+    -fx-text-fill: #49915e;
+    -fx-background-color:transparent;
+    -fx-background-size: 21;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center
+}
+.listButton:hover{
+   -fx-cursor: hand;
+}
+#albumArt{
+    -fx-background-image: url('molodi.png');
+    -fx-background-size:150;
+}
+
+/*      button icons        */
+#screen{
+    -fx-background-image: url('screen.png');
+}
+#more{
+    -fx-background-image: url('more.png');
+}
+#stop{
+    -fx-background-image: url('stop.png');
+}
+#previous{
+    -fx-background-image: url('previous.png');
+}
+#play{
+    -fx-background-image: url('play.png');
+}
+#pause{
+    -fx-background-image: url('pause.png');
+}
+#next{
+    -fx-background-image: url('next.png');
+}
+#volume{
+    -fx-background-image: url('volume.png');
+}
+#all{
+    -fx-background-image: url('all.png');
+}
+#remove{
+    -fx-background-image: url('remove.png');
+}
+#add{
+    -fx-background-image: url('add.png');
+}
+#open{
+    -fx-background-image: url('open.png');
+}
+#close{
+    -fx-background-image: url('close.png');
+}

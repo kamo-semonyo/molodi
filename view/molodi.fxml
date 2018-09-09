@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane fx:id="AnchorPane" minHeight="430.0" minWidth="794.0" prefHeight="430.0" prefWidth="794.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="molodi.MolodiController">
+    <children>
+      <VBox fx:id="visualiser" alignment="CENTER" layoutX="0" minHeight="430.0" minWidth="344.0" styleClass="toolBar">
+         <children>
+            <HBox maxHeight="49.0" prefHeight="49.0" prefWidth="327.0">
+               <children>
+                  <Button fx:id="screen" onAction="#toggleFullScreen" prefHeight="66.0" prefWidth="50.0" styleClass="listButton" />
+                  <HBox HBox.hgrow="ALWAYS" />
+                  <Button id="more" onAction="#toggleUtility" prefHeight="64.0" prefWidth="73.0" styleClass="playerButton" />
+               </children>
+            </HBox>
+            <VBox prefHeight="365.0" prefWidth="325.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <MediaView fx:id="view" fitHeight="265.0" fitWidth="325.0" />
+                        <ImageView fx:id="albumArt" fitHeight="200.0" fitWidth="200.0" />
+                        <VBox fx:id="volumeBox" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="volValue" alignment="CENTER" prefHeight="29.0" prefWidth="37.0" styleClass="volum-item" text="0" />
+                              <Slider fx:id="vol" orientation="VERTICAL" prefHeight="140.0" prefWidth="37.0" styleClass="volum-item" />
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="37.0" styleClass="volum-item" text="Vol" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <HBox prefHeight="26.0" prefWidth="302.0" spacing="10" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="time" maxHeight="26.0" maxWidth="46.0" prefHeight="26.0" prefWidth="30.0" styleClass="time-display" text="0:00" />
+                        <StackPane HBox.hgrow="ALWAYS">
+                        <ProgressBar fx:id="progress" prefHeight="5.0" prefWidth="240.0" />
+                        <Slider fx:id="progressNobe" prefHeight="24.0" prefWidth="240.0" />
+                        </StackPane>
+                        <Label fx:id="duration" maxHeight="25.0" maxWidth="46.0" prefHeight="25.0" prefWidth="46.0" styleClass="time-display" text="0:00" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="297.0" spacing="10.0">
+                     <children>
+                        <Button id="stop" maxHeight="32.0" maxWidth="37.0" onAction="#stopPlay" prefHeight="32.0" prefWidth="37.0" styleClass="listButton" />
+                        <Button id="previous" maxHeight="53.0" maxWidth="68.0" onAction="#playPrevious" prefHeight="53.0" prefWidth="68.0" styleClass="listButton" />
+                        <Button id="play" fx:id="playBtn" maxHeight="54.0" maxWidth="74.0" onAction="#play" prefHeight="54.0" prefWidth="74.0" styleClass="playerButton" />
+                        <Button id="next" maxHeight="53.0" maxWidth="68.0" onAction="#playNext" prefHeight="53.0" prefWidth="68.0" styleClass="listButton" />
+                        <Button id="volume" onAction="#toggleVolumeBox" prefHeight="32.0" prefWidth="35.0" styleClass="listButton" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox fx:id="utility" layoutX="342.0" layoutY="-11.0" prefHeight="441.0" prefWidth="452.0" styleClass="detail" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-11.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="446.0" styleClass="slideButtonBar">
+               <children>
+                  <Button onAction="#gotoBrowse" prefHeight="40.0" prefWidth="80.0" styleClass="slideButton" text="Browse" />
+                  <Button onAction="#gotoPlayList" prefHeight="40.0" prefWidth="80.0" styleClass="slideButton" text="Play List" />
+                  <Label fx:id="playListNum" alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="33.0" />
+                  <HBox HBox.hgrow="ALWAYS" />
+                  <Button onAction="#minimise" prefHeight="32.0" prefWidth="40.0" styleClass="controlButton" text="_" />
+                  <Button onAction="#close" prefHeight="32.0" prefWidth="40.0" styleClass="controlButton" text="X" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="446.0">
+               <children>
+                  <Pane prefHeight="45.0" prefWidth="20.0" styleClass="search" />
+                  <TextField fx:id="search" prefHeight="35.0" prefWidth="147.0" styleClass="searchBox" />
+                  <Button id="close" minWidth="42.0" onAction="#closeFolder" prefHeight="38.0" prefWidth="54.0" styleClass="listButton" />
+                  <CheckBox fx:id="autoPlay" minWidth="41.0" text="Play All" />
+                  <Button id="add" onAction="#addToPlayList" prefHeight="40.0" prefWidth="41.0" styleClass="listButton" />
+                  <Button fx:id="remove" onAction="#removeFromPlayList" prefHeight="40.0" prefWidth="41.0" styleClass="listButton" />
+               </children>
+            </HBox>
+               <HBox alignment="CENTER" spacing="5" prefHeight="267.0" prefWidth="446.0">
+                <children>
+                    <ListView fx:id="browse" prefHeight="295.0" prefWidth="446.0" />
+                    
+                </children>
+               </HBox>
+               <Label fx:id="statusbar" alignment="CENTER" prefWidth="446.0" prefHeight="30" styleClass="listButton" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+    </children>
+</AnchorPane>
